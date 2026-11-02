@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Linsen · slin.ai</title>
+  <meta name="description" content="Linsen — Shanghai. Personal site at slin.ai." />
+  <meta name="theme-color" content="#0c0d0f" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <main class="wrap">
+    <p class="eyebrow">slin.ai</p>
+    <h1>Linsen</h1>
+    <p class="lede">上海 · 把想法做成能跑的东西。</p>
+    <div class="rule" aria-hidden="true"></div>
+    <ul class="links">
+      <li><a href="https://github.com/nesnil" rel="me noopener" target="_blank">GitHub</a></li>
+      <li><a href="mailto:nesnil@gmail.com">Email</a></li>
+    </ul>
+    <footer>
+      <span>© <span id="y"></span> Linsen</span>
+    </footer>
+  </main>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
