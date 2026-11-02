@@ -1,5 +1,5 @@
 # wwwslin
 
-Personal site for [slin.ai](https://slin.ai).
+Site for [slin.ai](https://slin.ai).
 
-Static site, deployed on Cloudflare Pages.
+Static files served by Cloudflare Worker `wwwslin`.
