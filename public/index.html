@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, interactive-widget=resizes-content">
+  <meta name="description" content="sLin。来和虾米打个招呼。">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f8f6f1" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#141210" media="(prefers-color-scheme: dark)">
+  <meta property="og:title" content="sLin">
+  <meta property="og:description" content="来和虾米打个招呼。">
+  <meta property="og:url" content="https://slin.ai/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="sLin">
+  <link rel="canonical" href="https://slin.ai/">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='17' r='14' fill='%23f0643c'/%3E%3Crect x='10' y='11' width='3.5' height='8' rx='1.75' fill='%23fff'/%3E%3Crect x='18.5' y='11' width='3.5' height='8' rx='1.75' fill='%23fff'/%3E%3C/svg%3E">
+  <title>sLin</title>
+  <script>
+    try {
+      var t = localStorage.getItem("theme");
+      if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
+    } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500..700&family=Geist:wght@300..800&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas class="ocean" aria-hidden="true"></canvas>
+
+  <header class="top">
+    <a class="mark" href="/" aria-label="sLin 首页">s<span>L</span>in</a>
+    <nav class="top__nav">
+      <button class="dress-btn" type="button" aria-label="装扮" aria-expanded="false" aria-controls="dress">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="9"/><rect x="8.2" y="9.5" width="2.2" height="5" rx="1.1"/><rect x="13.6" y="9.5" width="2.2" height="5" rx="1.1"/></svg>
+      </button>
+      <a href="https://github.com/nesnil" rel="noopener noreferrer">GitHub</a>
+      <button class="theme" type="button" aria-label="切换深浅色"><span aria-hidden="true"></span></button>
+    </nav>
+  </header>
+
+  <div class="dress" id="dress" role="dialog" aria-label="装扮" hidden>
+    <label class="dress__row">
+      <span>名字</span>
+      <input class="dress__name" maxlength="12" autocomplete="off" spellcheck="false">
+    </label>
+    <div class="dress__row">
+      <span>颜色</span>
+      <div class="dress__colors" role="radiogroup" aria-label="颜色"></div>
+    </div>
+    <div class="dress__row">
+      <span>形状</span>
+      <div class="dress__shapes" role="radiogroup" aria-label="形状"></div>
+    </div>
+    <button class="dress__reset" type="button">恢复默认</button>
+  </div>
+
+
+  <h1 class="sr-only">sLin</h1>
+
+  <svg class="stage" aria-hidden="true"></svg>
+  <div class="bubble" hidden>
+    <span class="bubble__text" role="status" aria-live="polite"></span>
+    <button class="bubble__copy" type="button" aria-label="复制">
+      <svg class="i-copy" viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg>
+      <svg class="i-done" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+    </button>
+  </div>
+
+  <form class="chat" autocomplete="off">
+    <label class="sr-only" for="say">和 虾米 说点什么</label>
+    <span class="chat__status" aria-hidden="true"></span>
+    <input id="say" name="say" maxlength="400" placeholder="和 虾米 说点什么…" enterkeyhint="send">
+    <button type="submit" aria-label="发送">↵</button>
+  </form>
+
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+name = "wwwslin"
+main = "worker/index.js"
+compatibility_date = "2026-10-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Static site. Requests that match a file are served without running the Worker.
+[assets]
+directory = "./public"
+binding = "ASSETS"
+
+# Workers AI, used when bot.config.json has provider "workers-ai".
+# `wrangler dev` also calls the real models and counts toward the daily allocation.
+[ai]
+binding = "AI"
+
+# Per-IP limit on POST /api/chat (locked replies and passphrase guesses included).
+[[ratelimits]]
+name = "CHAT_LIMITER"
+namespace_id = "1001"
+simple = { limit = 20, period = 60 }

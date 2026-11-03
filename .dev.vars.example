@@ -1,0 +1,5 @@
+# Copy to .dev.vars for `npm run dev`. Never commit .dev.vars.
+# Signs the day-long chat tokens. Any long random string, e.g. `openssl rand -hex 32`.
+CHAT_TOKEN_SECRET=
+# Only needed for the anthropic / openai providers.
+# ANTHROPIC_API_KEY=
